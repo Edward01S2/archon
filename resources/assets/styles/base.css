@@ -1,0 +1,76 @@
+/* purgecss start ignore */
+html {
+  @apply font-roboto;
+  /* scroll-behavior: smooth; */
+}
+
+a {
+  @apply cursor-pointer transition duration-300 no-underline;
+}
+
+[x-cloak] { 
+  display: none; 
+}
+
+nav {
+  .nav-contact {
+    @apply block;
+    .nav-num {
+      @apply hidden;
+    }
+    .nav-text {
+      @apply px-8 py-2 border-2 border-c-gray-100;
+    }
+    &:hover, &:active, &:focus {
+      .nav-text {
+        @apply text-white bg-c-black-100 border-c-black-100;
+      }
+    }
+  }
+}
+
+#nav.active {
+  .nav-text {
+    @apply text-c-gray-100;
+  }
+  #logo-main {
+    @apply hidden;
+  }
+  #logo-alt {
+    @apply block;
+  }
+  .nav-link.active {
+    .nav-text {
+      @apply text-c-black-100;
+    }
+  }
+  .nav-contact.active {
+    .nav-text {
+      @apply bg-c-black-100 text-white border-c-black-100;
+    }
+  }
+  .nav-link {
+    .nav-text {
+      &:hover {
+        @apply text-c-gold-100;
+      }
+    }
+  }
+}
+
+footer {
+  a {
+    &:hover {
+      @apply text-c-gold-100 underline;
+    }
+  }
+}
+
+.page-template-template-custom {
+  .prose {
+    h1, h2, h3, h4, h5 {
+      @apply text-c-blue-300 font-semibold;
+    }
+  }
+}
+/* purgecss end ignore */
