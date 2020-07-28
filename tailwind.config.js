@@ -53,7 +53,7 @@ module.exports = {
       },
       fontFamily: {
         'space' : ['Space Mono', 'monospace'],
-        'roboto' : ['Roboto', 'sans-serif'],
+        'roboto' : ['Roboto', 'roboto', 'sans-serif'],
       },
       borderWidth: {
         '3': '3px'
@@ -65,6 +65,7 @@ module.exports = {
       },
       maxWidth: {
         '512': '512px',
+        '640': '640px',
         '720': '720px',
       },
       spacing: {

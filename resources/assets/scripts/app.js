@@ -130,15 +130,15 @@ var tl = gsap.timeline(),
 tl.from(lines, {
   opacity: 1,
   yPercent: -100,
-  duration: .4, 
+  duration: .7, 
   stagger: .2,
-  delay: 0.3,
+  delay: 0.5,
 });
 tl.from(plines, {
   opacity: 1,
   yPercent: -100,
-  duration: .2, 
-  stagger: .1,
+  duration: .4, 
+  stagger: .2,
 });
 
 $('#scroll-down').on('click', function(e) {
@@ -146,7 +146,7 @@ $('#scroll-down').on('click', function(e) {
   var $this = $(this),
   href = $this.attr("href"),
   topY = $(href).offset().top;
-  gsap.to(window, {duration: 1, scrollTo: {y: topY}});
+  gsap.to(window, {duration: 1.5, scrollTo: {y: topY}});
 });
 
 var sd = gsap.timeline({repeat: -1, paused: true });
@@ -172,7 +172,7 @@ tl.fromTo(".img-swipe", {
   xPercent: 0,
   }, {
   xPercent: 100,
-  duration: 1.3,
+  duration: 1.7,
 })
 
 gsap.fromTo(".fade-left", {
@@ -209,23 +209,27 @@ var apSplit = new SplitText("#offerings .subtitle", {type: "lines", linesClass: 
 at.from(ap.lines, {
   opacity: 1,
   yPercent: -100,
-  duration: .2, 
+  duration: .4, 
   stagger: .1,
 });
 at.from(atitle.lines, {
   opacity: 1,
   yPercent: -100,
-  duration: .3, 
+  duration: .7, 
   stagger: .2,
 });
 
-var aboutBoxes = gsap.utils.toArray(".offer-carousel .slide");
-at.from(aboutBoxes, {
-  opacity: 1,
-  xPercent: -125,
-  duration: .75, 
-  stagger: .2,
-});
+mqlWatch("(min-width: 768px)", function(matches) {
+  if(matches) {
+    var aboutBoxes = gsap.utils.toArray(".offer-carousel .slide");
+    at.from(aboutBoxes, {
+      opacity: 1,
+      xPercent: -125,
+      duration: 1.3, 
+      stagger: .3,
+    });
+  }
+})
 
 
 //Operating Animations
@@ -247,14 +251,14 @@ var oppSplit = new SplitText("#pillars .subtitle", {type: "lines", linesClass: "
 op.from(opp.lines, {
   opacity: 1,
   yPercent: -100,
-  duration: .2, 
+  duration: .4, 
   stagger: .1,
 });
 op.from(optitle.lines, {
   opacity: 1,
   yPercent: -100,
-  duration: .3, 
-  stagger: .1,
+  duration: .7, 
+  stagger: .2,
 });
 
 op.fromTo(".img-swipe-pillar", {
@@ -262,7 +266,7 @@ op.fromTo(".img-swipe-pillar", {
   }, {
   xPercent: 100,
   stagger: .3,
-  duration: 1.2,
+  duration: 1.7,
 })
 
 //Case Study Animations
@@ -279,7 +283,7 @@ var cs = gsap.timeline({
 cs.from("#case-study .title-container", {
   opacity: 1,
   yPercent: -100,
-  duration: .5,
+  duration: .7,
 })
 
 cs.fromTo(".color-swipe-study", {
@@ -287,7 +291,7 @@ cs.fromTo(".color-swipe-study", {
   }, {
   xPercent: 100,
   stagger: .3,
-  duration: 1.5,
+  duration: 2.3,
 })
 
 //Contact Animations
@@ -301,7 +305,7 @@ gsap.fromTo(".img-swipe-contact", {
     // markers: true,
   },
   xPercent: 100,
-  duration: 1.3,
+  duration: 1.7,
 })
 
 gsap.fromTo(".form-container", {
@@ -342,7 +346,7 @@ const navLinks = gsap.utils.toArray(".nav-container .nav-link");
 navLinks.forEach((link, i) => {
   link.addEventListener("click", function(e) {
     e.preventDefault();
-    gsap.to(window, {duration: 1, scrollTo: {y: e.currentTarget.getAttribute("href"), offsetY: 100 }});
+    gsap.to(window, {duration: 1.5, scrollTo: {y: e.currentTarget.getAttribute("href"), offsetY: 100 }});
   });
 });
 
@@ -362,6 +366,12 @@ gsap.utils.toArray(".section").forEach((box, i) => {
 
 //End Document Ready
 });
+
+function mqlWatch(mediaQuery, layoutChangedCallback) {
+  var mql = window.matchMedia(mediaQuery);
+  mql.addListener(function (e) { return layoutChangedCallback(e.matches); });
+  layoutChangedCallback(mql.matches);
+}
 
 
 

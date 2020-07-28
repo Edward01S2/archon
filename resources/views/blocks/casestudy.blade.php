@@ -4,7 +4,7 @@
       <div class="overflow-hidden">
         <div class="title-container mb-12 container mx-auto px-6 lg:px-8 lg:flex lg:items-center lg:justify-between">
           <div class="subtitle uppercase font-space text-c-gray-200 mb-4 text-xs lg:mb-0">{!! $subtitle !!}</div>
-          <h2 class="title font-space text-3xl leading-tight md:text-5xl xl:text-6xl">{!! $title !!}</h2>
+          <h2 class="title font-space text-3xl leading-tight md:text-5xl 2xl:text-6xl">{!! $title !!}</h2>
         </div>
       </div>
 
@@ -61,6 +61,9 @@
           >
             <div class="relative">
               <img class="relative w-full h-64 object-cover object-center z-10 lg:h-72" src="{!! $item['image'] !!}" alt="">
+              <div>
+                <button x-on:click="tab = ''" class="border border-c-black-100 px-4 z-30 py-2 absolute top-0 right-0 uppercase mt-4 mr-4 text-sm hover:bg-white hover:text-c-gold-100 transition duration-200 focus:outline-none active:outline-none lg:mr-6 lg:mt-6">Close</button>
+              </div>
               <div class="relative z-20 -mt-20 flex flex-col md:flex-row">
                 <div class="bg-white p-6 pb-12 md:p-12 md:pb-16 md:pt-8 md:-mt-12 lg:-mt-24 lg:pb-24">
                   <h3 class="font-space text-xl mb-4 leading-tight md:mb-8 md:text-4xl">{!! $item['title'] !!}</h3>

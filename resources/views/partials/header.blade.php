@@ -5,7 +5,7 @@
       <div class="flex">
         <div class="flex-shrink-0 flex items-center">
           <a href="{{ home_url('/') }}" class="hover:opacity-50">
-            <img id="logo-main" class="block h-10 w-auto xl:h-12" src="{!! $logo['url'] !!}" alt="{{ $siteName }}" />
+            <img id="logo-main" class="h-10 w-auto xl:h-12" src="{!! $logo['url'] !!}" alt="{{ $siteName }}" />
             <img id="logo-alt" class="hidden h-10 w-auto xl:h-12 transition duration-300" src="{!! $logo_alt['url'] !!}" alt="{{ $siteName }}">
           </a>
           {{-- <img class="block h-12 w-auto" src="{!! $mobile_logo['url'] !!}" alt="{{ $siteName }}" /> --}}
