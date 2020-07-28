@@ -1,8 +1,12 @@
 <section class="pt-16">
   <div class="relative z-30 container mx-auto px-6 lg:px-8">
     <div id="hero-text" class="pt-12 lg:pt-20 xl:pt-24">
-      <h1 class="font-space text-4xl leading-10 mb-4 md:text-5xl md:leading-tight lg:text-6xl lg:mb-8 2xl:text-7xl">{!! $title !!}</h1>
-      <p class="leading-8 md:max-w-xl md:text-lg xl:max-w-2xl">{!! $subtitle !!}</p>
+      <div class="overflow-hidden">
+        <h1 class="font-space text-4xl leading-10 mb-4 md:text-5xl md:leading-tight lg:text-6xl lg:mb-8 xl:text-5xl 2xl:text-6xl">{!! $title !!}</h1>
+      </div>
+      <div class="overflow-hidden">
+        <p class="leading-8 md:max-w-xl md:text-lg xl:max-w-2xl">{!! $subtitle !!}</p>
+      </div>
     </div>
   </div>
   <div class="relative z-0 pt-4">

@@ -116,25 +116,25 @@ if($('#tsparticles').is(':visible')) {
 }
 
 //Hero Animations
-var tl = gsap.timeline(),
-  title = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide-child" }),
-  titleSplit = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide" }),
+var tl = gsap.timeline()
+  // title = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide" }),
+  // //titleSplit = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide" }),
 
-  p = new SplitText("#hero-text p", {type: "lines", linesClass: "slide-child" }),
-  pSplit = new SplitText("#hero-text p", {type: "lines", linesClass: "slide" }),
+  // p = new SplitText("#hero-text p", {type: "lines", linesClass: "slide" }),
+  // //pSplit = new SplitText("#hero-text p", {type: "lines", linesClass: "slide" }),
 
-  lines = title.lines,
-  plines = p.lines;
+  // lines = title.lines,
+  // plines = p.lines;
 ;
 
-tl.from(lines, {
+tl.from("#hero-text h1", {
   opacity: 1,
   yPercent: -100,
   duration: .7, 
   stagger: .2,
   delay: 0.5,
 });
-tl.from(plines, {
+tl.from('#hero-text p', {
   opacity: 1,
   yPercent: -100,
   duration: .4, 
@@ -223,10 +223,10 @@ mqlWatch("(min-width: 768px)", function(matches) {
   if(matches) {
     var aboutBoxes = gsap.utils.toArray(".offer-carousel .slide");
     at.from(aboutBoxes, {
-      opacity: 1,
-      xPercent: -125,
+      opacity: 0,
+      xPercent: -2,
       duration: 1.3, 
-      stagger: .3,
+      stagger: .2,
     });
   }
 })
@@ -284,15 +284,27 @@ cs.from("#case-study .title-container", {
   opacity: 1,
   yPercent: -100,
   duration: .7,
+});
+
+mqlWatch("(min-width: 768px)", function(matches) {
+  if(matches) {
+    var aboutBoxes = gsap.utils.toArray(".study-carousel .slide");
+    cs.from(aboutBoxes, {
+      opacity: 0,
+      xPercent: -2,
+      duration: 1.3, 
+      stagger: .2,
+    });
+  }
 })
 
-cs.fromTo(".color-swipe-study", {
-  xPercent: 0,
-  }, {
-  xPercent: 100,
-  stagger: .3,
-  duration: 2.3,
-})
+// cs.fromTo(".color-swipe-study", {
+//   xPercent: 0,
+//   }, {
+//   xPercent: 100,
+//   stagger: .3,
+//   duration: 2.3,
+// })
 
 //Contact Animations
 gsap.fromTo(".img-swipe-contact", {

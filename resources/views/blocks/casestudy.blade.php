@@ -9,7 +9,7 @@
       </div>
 
       <div x-data="{ tab: 'none'}" class="bg-c-black-100 overflow-hidden relative">
-        <div class="color-swipe-study absolute bg-c-black-100 w-full h-full z-10 md:block"></div>
+        {{-- <div class="color-swipe-study absolute bg-c-black-100 w-full h-full z-10 md:block"></div> --}}
         <div class="container px-6 lg:px-8 mx-auto relative">
           <div class="study-carousel bg-c-black-100 pt-12 w-full lg:pt-16 flickity-resize">
             @foreach($posts as $item)
