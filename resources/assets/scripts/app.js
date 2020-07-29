@@ -116,25 +116,25 @@ if($('#tsparticles').is(':visible')) {
 }
 
 //Hero Animations
-var tl = gsap.timeline()
-  // title = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide" }),
-  // //titleSplit = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide" }),
+var tl = gsap.timeline(),
+  title = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide-child" }),
+  titleSplit = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide" }),
 
-  // p = new SplitText("#hero-text p", {type: "lines", linesClass: "slide" }),
-  // //pSplit = new SplitText("#hero-text p", {type: "lines", linesClass: "slide" }),
+  p = new SplitText("#hero-text p", {type: "lines", linesClass: "slide-child" }),
+  pSplit = new SplitText("#hero-text p", {type: "lines", linesClass: "slide" }),
 
-  // lines = title.lines,
-  // plines = p.lines;
+  lines = title.lines,
+  plines = p.lines;
 ;
 
-tl.from("#hero-text h1", {
+tl.from(lines, {
   opacity: 1,
   yPercent: -100,
   duration: .7, 
   stagger: .2,
   delay: 0.5,
 });
-tl.from('#hero-text p', {
+tl.from(plines, {
   opacity: 1,
   yPercent: -100,
   duration: .4, 
