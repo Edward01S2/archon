@@ -32,28 +32,40 @@ $(document).ready(() => {
     }
   })
 
-var flkty = new Flickity( '.offer-carousel', {
-  // options
-  cellAlign: 'center',
-  contain: true,
-  watchCSS: true,
-  prevNextButtons: false,
-});
+if($('.offer-carousel').length) {
+  var flkty = new Flickity( '.offer-carousel', {
+    // options
+    cellAlign: 'center',
+    contain: true,
+    watchCSS: true,
+    prevNextButtons: false,
+  });
+  
+}
 
-var flkty = new Flickity( '.operate-carousel', {
-  // options
-  cellAlign: 'center',
-  contain: true,
-  arrowShape: 'M1.9,47.4a2.9,2.9,0,0,0,0,4.2L20.8,70.5c2.6,2.8,6.9-1.5,4.2-4.2L8.2,49.5,25,32.7c2.7-2.7-1.5-7-4.2-4.2ZM99,46.5H4v6H99Z',
-});
+if($('.operate-carousel').length) {
+  var flkty = new Flickity( '.operate-carousel', {
+    // options
+    cellAlign: 'center',
+    contain: true,
+    arrowShape: 'M1.9,47.4a2.9,2.9,0,0,0,0,4.2L20.8,70.5c2.6,2.8,6.9-1.5,4.2-4.2L8.2,49.5,25,32.7c2.7-2.7-1.5-7-4.2-4.2ZM99,46.5H4v6H99Z',
+  });
 
-var flkty = new Flickity( '.study-carousel', {
-  // options
-  cellAlign: 'left',
-  imagesLoaded: true,
-  contain: true,
-  watchCSS: true,
-});
+  $(".operate-carousel .flickity-button").wrapAll('<div class="flickity-buttons" />');
+  $(".operate-carousel .flickity-buttons, .operate-carousel .flickity-page-dots").wrapAll('<div class="flickity-controls" />'); 
+}
+
+if($('.study-carousel').length) {
+  var flkty = new Flickity( '.study-carousel', {
+    // options
+    cellAlign: 'left',
+    imagesLoaded: true,
+    contain: true,
+    watchCSS: true,
+  });
+
+  $(".study-carousel .flickity-button, .study-carousel .flickity-page-dots").wrapAll('<div class="flickity-controls" />');
+}
 
 Flickity.prototype._createResizeClass = function() {
   this.element.classList.add('flickity-resize');
@@ -68,10 +80,6 @@ Flickity.prototype.resize = function() {
   this.element.classList.add('flickity-resize');
 };
 
-
-$(".operate-carousel .flickity-button").wrapAll('<div class="flickity-buttons" />');
-$(".operate-carousel .flickity-buttons, .operate-carousel .flickity-page-dots").wrapAll('<div class="flickity-controls" />');
-$(".study-carousel .flickity-button, .study-carousel .flickity-page-dots").wrapAll('<div class="flickity-controls" />');
 
 if(window.matchMedia("(min-width: 768px)")) {
   $("#field_1_4, #field_1_7").wrapAll('<div class="form-group" />');
@@ -115,31 +123,37 @@ if($('#tsparticles').is(':visible')) {
   });
 }
 
+gsap.config({
+  nullTargetWarn: false,
+});
+
 //Hero Animations
-var tl = gsap.timeline(),
-  title = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide-child" }),
-  titleSplit = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide" }),
+if($('#hero-text').length) {
+  var tl = gsap.timeline(),
+    title = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide-child" }),
+    titleSplit = new SplitText("#hero-text h1", {type: "lines", linesClass: "slide" }),
 
-  p = new SplitText("#hero-text p", {type: "lines", linesClass: "slide-child" }),
-  pSplit = new SplitText("#hero-text p", {type: "lines", linesClass: "slide" }),
+    p = new SplitText("#hero-text p", {type: "lines", linesClass: "slide-child" }),
+    pSplit = new SplitText("#hero-text p", {type: "lines", linesClass: "slide" }),
 
-  lines = title.lines,
-  plines = p.lines;
-;
+    lines = title.lines,
+    plines = p.lines;
+  ;
 
-tl.from(lines, {
-  opacity: 1,
-  yPercent: -100,
-  duration: .7, 
-  stagger: .2,
-  delay: 0.5,
-});
-tl.from(plines, {
-  opacity: 1,
-  yPercent: -100,
-  duration: .4, 
-  stagger: .2,
-});
+  tl.from(lines, {
+    opacity: 1,
+    yPercent: -100,
+    duration: .7, 
+    stagger: .2,
+    delay: 0.5,
+  });
+  tl.from(plines, {
+    opacity: 1,
+    yPercent: -100,
+    duration: .4, 
+    stagger: .2,
+  });
+}
 
 $('#scroll-down').on('click', function(e) {
   e.preventDefault();
@@ -168,135 +182,143 @@ $('#scroll-down').on('mouseleave', function(e) {
 
 
 //About Animations
-tl.fromTo(".img-swipe", {
-  xPercent: 0,
-  }, {
-  xPercent: 100,
-  duration: 1.7,
-})
+if($('#about').length) {
+  tl.fromTo(".img-swipe", {
+    xPercent: 0,
+    }, {
+    xPercent: 100,
+    duration: 1.7,
+  })
 
-gsap.fromTo(".fade-left", {
-  autoAlpha: 0,
-  x: -25,
-  }, {
-  scrollTrigger: {
-    trigger: '#about',
-    start: "top 60%",
-    // markers: true,
-  },
-  autoAlpha: 1,
-  x: 0,
-  duration: 1.5,
-});
+  gsap.fromTo(".fade-left", {
+    autoAlpha: 0,
+    x: -25,
+    }, {
+    scrollTrigger: {
+      trigger: '#about',
+      start: "top 60%",
+      // markers: true,
+    },
+    autoAlpha: 1,
+    x: 0,
+    duration: 1.5,
+  });
+}
 
 //Offerings Animations
 
-var at = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#offerings',
-    start: "top 50%",
-    // markers: true,
+if($('#offerings').length) {
+  var at = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#offerings',
+      start: "top 50%",
+      // markers: true,
+    },
   },
-},
-);
+  );
 
-var atitle = new SplitText("#offerings h2", {type: "lines", linesClass: "slide-child" });
-var atitleSplit = new SplitText("#offerings h2", {type: "lines", linesClass: "slide-down" });
+  var atitle = new SplitText("#offerings h2", {type: "lines", linesClass: "slide-child" });
+  var atitleSplit = new SplitText("#offerings h2", {type: "lines", linesClass: "slide-down" });
 
-var ap = new SplitText("#offerings .subtitle", {type: "lines", linesClass: "slide-child" });
-var apSplit = new SplitText("#offerings .subtitle", {type: "lines", linesClass: "slide-down" });
+  var ap = new SplitText("#offerings .subtitle", {type: "lines", linesClass: "slide-child" });
+  var apSplit = new SplitText("#offerings .subtitle", {type: "lines", linesClass: "slide-down" });
 
-at.from(ap.lines, {
-  opacity: 1,
-  yPercent: -100,
-  duration: .4, 
-  stagger: .1,
-});
-at.from(atitle.lines, {
-  opacity: 1,
-  yPercent: -100,
-  duration: .7, 
-  stagger: .2,
-});
+  at.from(ap.lines, {
+    opacity: 1,
+    yPercent: -100,
+    duration: .4, 
+    stagger: .1,
+  });
+  at.from(atitle.lines, {
+    opacity: 1,
+    yPercent: -100,
+    duration: .7, 
+    stagger: .2,
+  });
 
-mqlWatch("(min-width: 768px)", function(matches) {
-  if(matches) {
-    var aboutBoxes = gsap.utils.toArray(".offer-carousel .slide");
-    at.from(aboutBoxes, {
-      opacity: 0,
-      xPercent: -2,
-      duration: 1.3, 
-      stagger: .2,
-    });
-  }
-})
+  mqlWatch("(min-width: 768px)", function(matches) {
+    if(matches) {
+      var aboutBoxes = gsap.utils.toArray(".offer-carousel .slide");
+      at.from(aboutBoxes, {
+        opacity: 0,
+        xPercent: -2,
+        duration: 1.3, 
+        stagger: .2,
+      });
+    }
+  })
+}
 
 
 //Operating Animations
-var op = gsap.timeline({
-  scrollTrigger: {
-    trigger: '#pillars',
-    start: "top 60%",
-    // markers: true,
+if($('#pillars').length) {
+  var op = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#pillars',
+      start: "top 60%",
+      // markers: true,
+    },
   },
-},
-);
+  );
 
-var optitle = new SplitText("#pillars h2", {type: "lines", linesClass: "slide-child" });
-var optitleSplit = new SplitText("#pillars h2", {type: "lines", linesClass: "slide-down" });
+  var optitle = new SplitText("#pillars h2", {type: "lines", linesClass: "slide-child" });
+  var optitleSplit = new SplitText("#pillars h2", {type: "lines", linesClass: "slide-down" });
 
-var opp = new SplitText("#pillars .subtitle", {type: "lines", linesClass: "slide-child" });
-var oppSplit = new SplitText("#pillars .subtitle", {type: "lines", linesClass: "slide-down" });
+  var opp = new SplitText("#pillars .subtitle", {type: "lines", linesClass: "slide-child" });
+  var oppSplit = new SplitText("#pillars .subtitle", {type: "lines", linesClass: "slide-down" });
 
-op.from(opp.lines, {
-  opacity: 1,
-  yPercent: -100,
-  duration: .4, 
-  stagger: .1,
-});
-op.from(optitle.lines, {
-  opacity: 1,
-  yPercent: -100,
-  duration: .7, 
-  stagger: .2,
-});
+  op.from(opp.lines, {
+    opacity: 1,
+    yPercent: -100,
+    duration: .4, 
+    stagger: .1,
+  });
+  op.from(optitle.lines, {
+    opacity: 1,
+    yPercent: -100,
+    duration: .7, 
+    stagger: .2,
+  });
 
-op.fromTo(".img-swipe-pillar", {
-  xPercent: 0,
-  }, {
-  xPercent: 100,
-  stagger: .3,
-  duration: 1.7,
-})
+  op.fromTo(".img-swipe-pillar", {
+    xPercent: 0,
+    }, {
+    xPercent: 100,
+    stagger: .3,
+    duration: 1.7,
+  })
+}
 
 //Case Study Animations
-var cs = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.operate-carousel .flickity-buttons',
-    endTrigger: '#case-study',
-    start: "top 60%",
-    //markers: true,
+if($('#case-study').length) {
+  var cs = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.operate-carousel .flickity-buttons',
+      endTrigger: '#case-study',
+      start: "top 60%",
+      //markers: true,
+    },
   },
-},
-);
+  );
 
-cs.from("#case-study .title-container", {
-  opacity: 1,
-  yPercent: -100,
-  duration: .7,
-});
+  cs.from("#case-study .title-container", {
+    opacity: 1,
+    yPercent: -100,
+    duration: .7,
+  });
 
-mqlWatch("(min-width: 768px)", function(matches) {
-  if(matches) {
-    var aboutBoxes = gsap.utils.toArray(".study-carousel .slide");
-    cs.from(aboutBoxes, {
-      opacity: 0,
-      xPercent: -2,
-      duration: 1.3, 
-      stagger: .2,
-    });
-  }
-})
+  mqlWatch("(min-width: 768px)", function(matches) {
+    if(matches) {
+      var aboutBoxes = gsap.utils.toArray(".study-carousel .slide");
+      cs.from(aboutBoxes, {
+        opacity: 0,
+        xPercent: -2,
+        duration: 1.3, 
+        stagger: .2,
+      });
+    }
+  })
+}
 
 // cs.fromTo(".color-swipe-study", {
 //   xPercent: 0,
@@ -307,33 +329,35 @@ mqlWatch("(min-width: 768px)", function(matches) {
 // })
 
 //Contact Animations
-gsap.fromTo(".img-swipe-contact", {
-  xPercent: 0,
-  }, {
-  scrollTrigger: {
-    trigger: '.study-carousel .flickity-controls',
-    endTrigger: '#contact',
-    start: "top 60%",
-    // markers: true,
-  },
-  xPercent: 100,
-  duration: 1.7,
-})
+if($('#contact').length) {
+  gsap.fromTo(".img-swipe-contact", {
+    xPercent: 0,
+    }, {
+    scrollTrigger: {
+      trigger: '.study-carousel .flickity-controls',
+      endTrigger: '#contact',
+      start: "top 60%",
+      // markers: true,
+    },
+    xPercent: 100,
+    duration: 1.7,
+  })
 
-gsap.fromTo(".form-container", {
-  autoAlpha: 0,
-  x: -25,
-  }, {
-  scrollTrigger: {
-    trigger: '.study-carousel .flickity-controls',
-    endTrigger: '#contact',
-    start: "top 60%",
-    // markers: true,
-  },
-  autoAlpha: 1,
-  x: 0,
-  duration: 1.5,
-});
+  gsap.fromTo(".form-container", {
+    autoAlpha: 0,
+    x: -25,
+    }, {
+    scrollTrigger: {
+      trigger: '.study-carousel .flickity-controls',
+      endTrigger: '#contact',
+      start: "top 60%",
+      // markers: true,
+    },
+    autoAlpha: 1,
+    x: 0,
+    duration: 1.5,
+  });
+}
 
 //Nav Animations
 
@@ -357,8 +381,13 @@ const navLinks = gsap.utils.toArray(".nav-container .nav-link");
 //console.log(navLinks);
 navLinks.forEach((link, i) => {
   link.addEventListener("click", function(e) {
-    e.preventDefault();
-    gsap.to(window, {duration: 1.5, scrollTo: {y: e.currentTarget.getAttribute("href"), offsetY: 100 }});
+    var href = e.currentTarget.getAttribute("href")
+    var anchor = href.substring(href.indexOf("#"))
+
+    if(document.querySelectorAll(anchor).length > 0) {
+      e.preventDefault();
+      gsap.to(window, {duration: 1.5, scrollTo: {y: anchor, offsetY: 100 }});
+    }
   });
 });
 

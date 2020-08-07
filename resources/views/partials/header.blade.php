@@ -14,7 +14,11 @@
 
       <div class="nav-container flex items-center md:space-x-10 lg:space-x-16 xl:space-x-20">
         @foreach ($navigation as $item)
+          @if(is_front_page())
           <a class="nav-link hidden font-space leading-5 text-c-black-100 focus:outline-none group focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out md:block md:text-xs lg:text-base {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}" href="{{ $item->url }}">
+          @else
+          <a class="nav-link hidden font-space leading-5 text-c-black-100 focus:outline-none group focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out md:block md:text-xs lg:text-base {{ $item->classes ?? '' }} {{ $item->active ? 'active' : '' }}" href="{{ home_url('/') . $item->url }}">
+          @endif  
             <div class="text-c-gray-100 nav-num">{!! sprintf("%02d.", $loop->iteration) !!}</div>
             <div class="nav-text group-hover:text-c-gold-100">{{ $item->label }}</div>
           </a>
