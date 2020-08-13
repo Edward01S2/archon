@@ -22,6 +22,7 @@ class Study extends Field
             ->setLocation('post_type', '==', 'study');
 
         $study
+            ->addText('subtitle')
             ->addText('link title');
 
         return $study->build();

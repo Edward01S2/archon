@@ -17,7 +17,8 @@
               <div class="slide w-4/5 mb-12 pb-0 ml-8 flex flex-col md:w-1/2 md:pb-0 md:ml-12 md:mb-12 lg:w-2/5 xl:w-1/3">
                 <img class="object-cover w-full h-48 mb-4 md:h-56 xl:h-64" src="{!! $item['image'] !!}" alt="">
                 <div class=" pb-12 flex-grow md:w-4/5 lg:pb-12">
-                  <h3 class="text-white font-space text-xl mb-4 md:leading-snug md:text-2xl lg:pr-0">{!! $item['title'] !!}</h3>
+                  <h3 class="text-white font-space text-xl mb-1 md:leading-snug md:text-2xl lg:pr-0">{!! $item['title'] !!}</h3>
+                  <h4 class="text-c-gold-100 font-space text-base mb-4 md:leading-snug md:text-lg lg:pr-0">{!! $item['subtitle'] !!}</h4>
                   <p class="text-c-gray-300 text-sm flex-grow lg:text-base xl:text-lg">{!! $item['excerpt'] !!}</p>
                 </div>
                 <div>
@@ -66,7 +67,8 @@
               </div>
               <div class="relative z-20 -mt-20 flex flex-col md:flex-row">
                 <div class="bg-white p-6 pb-12 md:p-12 md:pb-16 md:pt-8 md:-mt-12 lg:-mt-24 lg:pb-24">
-                  <h3 class="font-space text-xl mb-4 leading-tight md:mb-8 md:text-4xl">{!! $item['title'] !!}</h3>
+                  <h3 class="font-space text-xl mb-1 leading-tight md:mb-2 md:text-4xl">{!! $item['title'] !!}</h3>
+                  <h4 class="font-space text-base mb-4 md:leading-snug md:text-xl md:mb-8 lg:pr-0">{!! $item['subtitle'] !!}</h4>
                   <div class="prose-sm md:prose">
                     {!! $item['content'] !!}
                   </div>

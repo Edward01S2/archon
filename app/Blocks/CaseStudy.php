@@ -127,6 +127,7 @@ class CaseStudy extends Block
 
         $post_data[] = [
             'title' => get_the_title(),
+            'subtitle' => get_field('subtitle', $id),
             'link' => get_field('link title', $id),
             'image' => get_the_post_thumbnail_url(),
             'excerpt' => get_the_excerpt(),
