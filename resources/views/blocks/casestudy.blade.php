@@ -1,4 +1,4 @@
-<section id="case-study" class="section xl:overflow-hidden">
+<section id="{!! $section !!}" class="section xl:overflow-hidden">
   <div class="">
     <div class="py-16">
       <div class="overflow-hidden">

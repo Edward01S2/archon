@@ -80,6 +80,7 @@ class Offerings extends Block
         return [
             'items' => get_field('items'),
             'title' => get_field('title'),
+            'section' => str_replace(' ', '-', strtolower(get_field('title'))),
             'subtitle' => get_field('subtitle'),
         ];
     }

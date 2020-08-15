@@ -79,6 +79,7 @@ class CaseStudy extends Block
     {
         return [
             'title' => get_field('title'),
+            'section' => str_replace(' ', '-', strtolower(get_field('title'))),
             'subtitle' => get_field('subtitle'),
             'posts' => $this->posts(),
         ];

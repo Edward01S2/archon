@@ -81,6 +81,7 @@ class Contact extends Block
     {
         return [
             'title' => get_field('title'),
+            'section' => str_replace(' ', '-', strtolower(get_field('title'))),
             'form' => get_field('form'),
             'image' => get_field('image')
         ];

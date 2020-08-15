@@ -1,4 +1,4 @@
-<section id="pillars" class="section">
+<section id="{!! $section !!}" class="section">
   <div class="container mx-auto px-6 pb-12 md:text-center md:pb-16 lg:px-8">
     <div class="subtitle uppercase font-space text-c-gray-200 mb-4 text-xs">{!! $subtitle !!}</div>
     <h2 class="font-space text-3xl md:text-5xl 2xl:text-6xl">{!! $title !!}</h2>

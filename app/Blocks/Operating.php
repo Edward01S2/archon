@@ -80,6 +80,7 @@ class Operating extends Block
         return [
             'subtitle' => get_field('subtitle'),
             'title' => get_field('title'),
+            'section' => str_replace(' ', '-', strtolower(get_field('title'))),
             'image' => get_field('image'),
             'items' => get_field('items'),
         ];
