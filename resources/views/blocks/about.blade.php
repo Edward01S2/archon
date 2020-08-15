@@ -1,4 +1,4 @@
-<section id="section-1" class="section relative overflow-hidden -mt-12 md:-mt-32">
+<section id="section-1" class="section section-1 relative overflow-hidden -mt-12 md:-mt-32">
   <div class="md:flex">
     <div class="md:w-1/2 md:relative md:order-2">
       <div class="img-swipe hidden absolute bg-c-black-100 w-full h-full z-10 md:block xl:ml-24"></div>

@@ -1,4 +1,4 @@
-<section id="{!! $section !!}" class="section">
+<section id="{!! $section !!}" class="section section-2">
   <div class="container mx-auto lg:px-8">
     <div class="py-16 pb-24">
       <div class="mb-12 px-6 lg:px-16 xl:pl-28">

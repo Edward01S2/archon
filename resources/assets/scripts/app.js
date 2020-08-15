@@ -182,7 +182,7 @@ $('#scroll-down').on('mouseleave', function(e) {
 
 
 //About Animations
-if($('#about').length) {
+if($('.section-1').length) {
   tl.fromTo(".img-swipe", {
     xPercent: 0,
     }, {
@@ -195,7 +195,7 @@ if($('#about').length) {
     x: -25,
     }, {
     scrollTrigger: {
-      trigger: '#about',
+      trigger: '.section-1',
       start: "top 60%",
       // markers: true,
     },
@@ -207,21 +207,21 @@ if($('#about').length) {
 
 //Offerings Animations
 
-if($('#offerings').length) {
+if($('.section-2').length) {
   var at = gsap.timeline({
     scrollTrigger: {
-      trigger: '#offerings',
+      trigger: '.section-2',
       start: "top 50%",
       // markers: true,
     },
   },
   );
 
-  var atitle = new SplitText("#offerings h2", {type: "lines", linesClass: "slide-child" });
-  var atitleSplit = new SplitText("#offerings h2", {type: "lines", linesClass: "slide-down" });
+  var atitle = new SplitText(".section-2 h2", {type: "lines", linesClass: "slide-child" });
+  var atitleSplit = new SplitText(".section-2 h2", {type: "lines", linesClass: "slide-down" });
 
-  var ap = new SplitText("#offerings .subtitle", {type: "lines", linesClass: "slide-child" });
-  var apSplit = new SplitText("#offerings .subtitle", {type: "lines", linesClass: "slide-down" });
+  var ap = new SplitText(".section-2 .subtitle", {type: "lines", linesClass: "slide-child" });
+  var apSplit = new SplitText(".section-2 .subtitle", {type: "lines", linesClass: "slide-down" });
 
   at.from(ap.lines, {
     opacity: 1,
@@ -251,21 +251,21 @@ if($('#offerings').length) {
 
 
 //Operating Animations
-if($('#pillars').length) {
+if($('.section-3').length) {
   var op = gsap.timeline({
     scrollTrigger: {
-      trigger: '#pillars',
+      trigger: '.section-3',
       start: "top 60%",
       // markers: true,
     },
   },
   );
 
-  var optitle = new SplitText("#pillars h2", {type: "lines", linesClass: "slide-child" });
-  var optitleSplit = new SplitText("#pillars h2", {type: "lines", linesClass: "slide-down" });
+  var optitle = new SplitText(".section-3 h2", {type: "lines", linesClass: "slide-child" });
+  var optitleSplit = new SplitText(".section-3 h2", {type: "lines", linesClass: "slide-down" });
 
-  var opp = new SplitText("#pillars .subtitle", {type: "lines", linesClass: "slide-child" });
-  var oppSplit = new SplitText("#pillars .subtitle", {type: "lines", linesClass: "slide-down" });
+  var opp = new SplitText(".section-3 .subtitle", {type: "lines", linesClass: "slide-child" });
+  var oppSplit = new SplitText(".section-3 .subtitle", {type: "lines", linesClass: "slide-down" });
 
   op.from(opp.lines, {
     opacity: 1,
@@ -290,18 +290,18 @@ if($('#pillars').length) {
 }
 
 //Case Study Animations
-if($('#case-study').length) {
+if($('.section-4').length) {
   var cs = gsap.timeline({
     scrollTrigger: {
       trigger: '.operate-carousel .flickity-buttons',
-      endTrigger: '#case-study',
+      endTrigger: '.section-4',
       start: "top 60%",
       //markers: true,
     },
   },
   );
 
-  cs.from("#case-study .title-container", {
+  cs.from(".section-4 .title-container", {
     opacity: 1,
     yPercent: -100,
     duration: .7,
@@ -329,13 +329,13 @@ if($('#case-study').length) {
 // })
 
 //Contact Animations
-if($('#contact').length) {
+if($('.section-5').length) {
   gsap.fromTo(".img-swipe-contact", {
     xPercent: 0,
     }, {
     scrollTrigger: {
       trigger: '.study-carousel .flickity-controls',
-      endTrigger: '#contact',
+      endTrigger: '.section-5',
       start: "top 60%",
       // markers: true,
     },
@@ -349,7 +349,7 @@ if($('#contact').length) {
     }, {
     scrollTrigger: {
       trigger: '.study-carousel .flickity-controls',
-      endTrigger: '#contact',
+      endTrigger: '.section-5',
       start: "top 60%",
       // markers: true,
     },

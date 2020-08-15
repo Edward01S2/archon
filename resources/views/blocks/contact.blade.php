@@ -1,4 +1,4 @@
-<section id="{!! $section !!}" class="section relative overflow-hidden lg:mt-12">
+<section id="{!! $section !!}" class="section section-5 relative overflow-hidden lg:mt-12">
   <div class="md:flex">
     <div class="md:w-1/2 md:overflow-hidden md:relative md:order-2">
       <div class="img-swipe-contact hidden absolute bg-c-black-100 w-full h-full z-10 ml-24 md:block"></div>
